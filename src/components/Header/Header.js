@@ -1,0 +1,64 @@
+import Link from "next/link";
+import React from "react";
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import { DiCssdeck } from "react-icons/di";
+import { ProfileImage } from "../../constants/constants";
+import {
+  Section,
+  SectionDivider,
+  SectionTitle,
+} from "../../styles/GlobalComponents";
+
+import {
+  Container,
+  Div1,
+  Div2,
+  Div3,
+  NavLink,
+  SocialIcons,
+  Img,
+} from "./HeaderStyles";
+
+const Header = () => (
+  <Container>
+    <Div1>
+      <Link href="/">
+        <a style={{ display: "flex", alignItems: "center", color: "white" }}>
+          <DiCssdeck size="3rem" /> <span>Portfolio</span>
+        </a>
+      </Link>
+    </Div1>
+    <Div2>
+      <li>
+        <Link href="#projects">
+          <NavLink>Projects</NavLink>
+        </Link>
+      </li>
+      <li>
+        <Link href="#tech">
+          <NavLink>Technical Skills </NavLink>
+        </Link>
+      </li>
+      <li>
+        <Link href="#about">
+          <NavLink>About</NavLink>
+        </Link>
+      </li>
+    </Div2>
+    <Div3>
+      <SocialIcons href="https://github.com/RankerO">
+        <AiFillGithub size="3rem" />
+      </SocialIcons>
+      <SocialIcons href="https://www.linkedin.com/in/ankit-pandey-0828bb199">
+        <AiFillLinkedin size="3rem" />
+      </SocialIcons>
+      {/* <SocialIcons href="https://google.com">
+      </SocialIcons> */}
+      <Img size="3rem" src={ProfileImage.image} />
+    </Div3>
+
+    {/* <img alt="stack overflow" src={profilepic}></img> */}
+  </Container>
+);
+
+export default Header;
